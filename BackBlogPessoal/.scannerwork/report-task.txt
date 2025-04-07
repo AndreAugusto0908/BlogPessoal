@@ -1,0 +1,6 @@
+projectKey=backblog-pessoal
+serverUrl=http://localhost:9000
+serverVersion=25.3.0.104237
+dashboardUrl=http://localhost:9000/dashboard?id=backblog-pessoal
+ceTaskId=9d337cfb-0a5d-414b-84f6-3d149f31d2e7
+ceTaskUrl=http://localhost:9000/api/ce/task?id=9d337cfb-0a5d-414b-84f6-3d149f31d2e7
