@@ -10,9 +10,15 @@ export class DefaultLoginComponent {
     @Input() subText : string = ""
     @Input() yellowSubText : string = ""
     @Input() bttnText : string = ""
+    @Input() disableButton : boolean = true;
     @Output("submit") onSubmit = new EventEmitter();
+    @Output("navigate") onNavigate = new EventEmitter();
 
     sumbit(){
       this.onSubmit.emit();
+    }
+
+    navigate(){
+      this.onNavigate.emit();
     }
 }

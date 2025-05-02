@@ -3,6 +3,8 @@
     yellowSubText="Realize o cadastro"
     bttnText="Login"
     (submit)="submit()"
+    (navigate)="submit()"
+    [disableButton]="!loginform.valid"
 >
     <form [formGroup]="loginform" class="flex flex-col gap-5">
         <app-primary-input
