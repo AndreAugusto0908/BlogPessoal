@@ -2,9 +2,23 @@
     subText="Não possui conta ainda?"
     yellowSubText="Realize o cadastro"
     bttnText="Login"
+    (submit)="submit()"
 >
-    <form [formGroup]="loginform">
-        
+    <form [formGroup]="loginform" class="flex flex-col gap-5">
+        <app-primary-input
+            formControlName="usuario"
+            type="text"
+            placeholder="Usuario"
+        >
+            <img src="/user.svg" alt="Login">       
+        </app-primary-input>
+        <app-primary-input
+            formControlName="senha"
+            type="senha"
+            placeholder="Senha"
+        >
+            <img src="/lock.svg" alt="Login">       
+        </app-primary-input>
     </form>
 
 </app-default-login>

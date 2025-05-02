@@ -1,22 +1,24 @@
-<main class="flex items-center h-screen w-full justify-center">
-    <section class="bg-fundocinza justify-center items-center pb-6 pr-10 pl-10">
+<main class="flex flex-col items-center h-screen w-full justify-center">
+    <section class="bg-fundocinza justify-center items-center pb-6 pr-10 pl-10 rounded-2xl">
         <div class="flex justify-center items-center">
             <img src="/logo.svg"/>
         </div>
-        <div class="flex flex-row w-full gap-1 justify-center">
+
+        <div class="flex flex-row w-full gap-1 justify-center pb-7">
             <span>{{ subText }}</span>
             <span class="text-amarelo">{{ yellowSubText }}</span>
         </div>
 
+        <div class="pb-5">
+            <ng-content></ng-content>
+        </div>
+
         <div>
-            <div>
-                <ng-content></ng-content>
-            </div>
-            <div>
-                <button
-                 class="bg-amarelo w-full rounded-2xl border pt-2 pb-2"
-                >{{ bttnText }}</button>
-            </div>
+            <button
+                class="bg-amarelo w-full rounded-2xl border pt-2 pb-2"
+                (click)="sumbit()"
+                >{{ bttnText }}
+            </button>
         </div>
     </section>
 </main>

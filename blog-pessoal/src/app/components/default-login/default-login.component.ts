@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-default-login',
@@ -10,4 +10,9 @@ export class DefaultLoginComponent {
     @Input() subText : string = ""
     @Input() yellowSubText : string = ""
     @Input() bttnText : string = ""
+    @Output("submit") onSubmit = new EventEmitter();
+
+    sumbit(){
+      this.onSubmit.emit();
+    }
 }
