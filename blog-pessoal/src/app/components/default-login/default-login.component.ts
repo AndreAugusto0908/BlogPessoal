@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-default-login',
@@ -7,5 +7,7 @@ import { Component } from '@angular/core';
   styleUrl: './default-login.component.css'
 })
 export class DefaultLoginComponent {
-
+    @Input() subText : string = ""
+    @Input() yellowSubText : string = ""
+    @Input() bttnText : string = ""
 }

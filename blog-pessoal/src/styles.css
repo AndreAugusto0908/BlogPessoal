@@ -1,2 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
 @import "tailwindcss";
+
+@theme {
+  --font-sans: Helvetica, Arial, sans-serif;
+
+  --color-*: initial; /* limpa as cores padrões do Tailwind */
+
+  --color-fundo: #131415;
+  --color-fundocinza: #323539;
+  --color-amarelo: #ffd37d;
+  --color-branco: #d9e4ed;
+}
+
+body {
+    @apply font-sans bg-fundo;
+  }
