@@ -1,8 +1,14 @@
 <nav class="flex flex-row bg-fundocinza opacity-80 p-5 justify-between">
+    @if (mostrarFormulario) {
+        <app-new-post />
+      }
+
     <section class="flex flex-row pl-15 gap-4">
-        <button class="bg-amarelo p-2 pt-3 pr-3 pl-3 flex items-center justify-center rounded-2xl">
+        <button
+            (click)="onFormularioClick()"
+            class="bg-amarelo p-2 pt-3 pr-3 pl-3 flex items-center justify-center rounded-2xl">
             <img src="/create.svg" alt="">
-          </button>
+        </button>
         <div class="bg-fundocinza opacity-100 flex items-center gap-2 px-3 py-2">
             <img src="/search.svg" alt="Buscar" class="" />
             <input
@@ -15,13 +21,13 @@
 
     <section class="flex flex-row pl-5 gap-15">
         <button>
-            <span>Home</span>
+            <span class="text-fundo">Home</span>
         </button>
         <button>
-            <span>Meu Perfil</span>
+            <span class="text-fundo">Meu Perfil</span>
         </button>
         <button>
-            <span>Estatísticas</span>
+            <span class="text-fundo">Estatísticas</span>
         </button>
     </section>
 

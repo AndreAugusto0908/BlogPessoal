@@ -1,0 +1,28 @@
+<div class="bg-fundo rounded-2xl w-screen h-screen flex items-center justify-center">
+    <form [formGroup]="postForm" class="flex flex-col gap-5">
+        <app-primary-input
+            formControlName="titulo"
+            type="text"
+            placeholder="Titulo"
+        />
+
+        <select
+            id="underline_select"
+            formControlName="tema"
+            class="block py-2.5 px-0 w-full text-sm text-branco bg-transparent border-0 border-b-2 border-gray-200 appearance-none dark:text-gray-400 dark:border-gray-700 focus:outline-none focus:ring-0 focus:border-gray-200 peer"
+            >
+            <option value="" disabled selected>Escolha um tema</option>
+            @for (tema of temas; track tema.id) {
+                <option [value]="tema.descricao">
+                  {{ tema.descricao }}
+                </option>
+              }
+        </select>
+
+        <app-primary-input
+            formControlName="texto"
+            type="text"
+            placeholder="Texto"
+        />
+    </form>
+</div>
