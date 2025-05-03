@@ -5,10 +5,12 @@ import { PrimaryInputComponent } from '../../components/primary-input/primary-in
 import { Router } from '@angular/router';
 import { LoginService } from '../../services/Auth/login.service';
 import { ToastrService } from 'ngx-toastr';
+import { RegisterService } from '../../services/Auth/register.service';
 
-interface LoginForm{
-  usuario : FormControl,
-  senha : FormControl
+interface SignupForm{
+  nome: FormControl,
+  usuario: FormControl,
+  senha: FormControl
 }
 
 @Component({
@@ -21,34 +23,33 @@ interface LoginForm{
   providers:[
     LoginService
   ],
-  templateUrl: './login.component.html',
-  styleUrl: './login.component.css'
+  templateUrl: './signup.component.html',
+  styleUrl: './signup.component.css'
 })
-export class LoginComponent {
+export class SignupComponent {
 
-    loginform!: FormGroup<LoginForm>
+    signupForm!: FormGroup<SignupForm>
 
     constructor(
       private router: Router,
-      private loginService: LoginService,
+      private registerService: RegisterService,
       private toastService : ToastrService
     ){
-      this.loginform = new FormGroup({
-        usuario: new FormControl("", [Validators.required]),
+      this.signupForm = new FormGroup({
+        nome: new FormControl("", [Validators.required, Validators.min(3)]),
+        usuario: new FormControl("", [Validators.required ,  Validators.min(3)]),
         senha: new FormControl("", [Validators.required, Validators.min(5)])
       })
     }
 
     submit(){
-      this.loginService.login(this.loginform.value.usuario, this.loginform.value.senha).subscribe({
-        next: () => {this.toastService.success("Login Feito com Sucessor")
-          this.router.navigate(['auth/dashboard'])
-        },
+      this.registerService.register(this.signupForm.value.nome ,this.signupForm.value.usuario, this.signupForm.value.senha).subscribe({
+        next: () => this.toastService.success("Registro Feito com Sucessor"),
         error: () => this.toastService.error("Erro inesperado tente novamente mais tarde")
       })
     }
 
     navigate(){
-      this.router.navigate(["signup"])
+      this.router.navigate(["login"])
     }
 }

@@ -1,12 +1,19 @@
 <app-default-login
-    subText="Não possui conta ainda?"
-    yellowSubText="Realize o cadastro"
-    bttnText="Login"
+    subText="Já possui conta?"
+    yellowSubText="Faça o login"
+    bttnText="Cadastre-se"
     (submit)="submit()"
     (navigate)="navigate()"
-    [disableButton]="!loginform.valid"
+    [disableButton]="!signupForm.valid"
 >
-    <form [formGroup]="loginform" class="flex flex-col gap-5">
+    <form [formGroup]="signupForm" class="flex flex-col gap-5">
+        <app-primary-input
+            formControlName="nome"
+            type="text"
+            placeholder="Nome"
+        >
+            <img src="/nome.svg" alt="Nome">       
+        </app-primary-input>
         <app-primary-input
             formControlName="usuario"
             type="text"
