@@ -12,7 +12,7 @@ import { NewPostComponent } from '../../forms/new-post/new-post.component';
 export class NavbarComponent {
     mostrarFormulario = false
 
-    @Input() smallName : string = "LG"
+    @Input() name : string = sessionStorage.getItem("nome") ?? ""
 
     onFormularioClick(){
       this.mostrarFormulario = !this.mostrarFormulario
