@@ -9,6 +9,7 @@ import { jwtDecode } from 'jwt-decode';
 interface DecodedToken {
   nome: string;
   usuario: string;
+  id: number;
   exp: number;
   sub: string;
   iss: string;
@@ -29,6 +30,7 @@ export class LoginService {
         const decoded = jwtDecode<DecodedToken>(value.token);
         sessionStorage.setItem("username", decoded.usuario);
         sessionStorage.setItem("nome", decoded.nome);
+        sessionStorage.setItem("id", decoded.id.toString());
       })
     )
   }

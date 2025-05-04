@@ -56,7 +56,7 @@ export class NewPostComponent implements OnInit {
   getNameTema(){
     this.temaService.getAllTemas().subscribe({
       next: (temas) => {this.temas = temas},
-      error: () => this.toastService.error("Erro inesperado tente novamente mais tarde")
+      error: () => this.toastService.error("Erro inesperado ao carregar temas tente novamente mais tarde")
     })
   }
   

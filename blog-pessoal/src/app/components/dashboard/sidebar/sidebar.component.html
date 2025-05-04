@@ -1,4 +1,4 @@
-<aside class="flex flex-col gap-4">
+<aside class="flex flex-col gap-4 ">
     <section class="flex flex-col justify-center items-center gap-3">
         <div class="bg-fundocinza p-15 rounded-full flex justify-between items-center">
             <span class="text-4xl text-branco opacity-70">{{ smallName }}</span>
@@ -35,13 +35,20 @@
             </app-button-sidebar>
           
           </div>
-        <div>
-            <span>Ultimos Post</span>
-            <div>
-                <div class="bg-fundo rounded-2xl p-4 flex flex-col gap-2">
-                    <span class="text-right">dd/mm</span>
-                    <span>Amei meu café da manhã</span>
+
+        <div class="border-t-2 border-branco pt-4">
+            <span class="text-branco opacity-60">Ultimos Post</span>
+            <div class="flex flex-col gap-3 overflow-y-auto pr-1
+            h-25 sm:h-25 md:h-25 lg:h-25 xl:h-25
+            scrollbar-thin scrollbar-thumb-gray-600 scrollbar-track-transparent">
+            @for (post of userPosts; track post.id) {
+                <div class="bg-fundo rounded-2xl p-4 flex flex-row gap-2 opacity-70">
+                <div class="flex flex-col gap-2">
+                    <span class="text-right text-branco opacity-60">{{ post.data }}</span>
+                    <span class="text-branco opacity-60">{{ post.texto }}</span>
                 </div>
+                </div>
+            }
             </div>
         </div>
     </section>
