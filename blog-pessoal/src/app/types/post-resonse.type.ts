@@ -6,6 +6,6 @@ export type PostResponse = {
     data: string,
     tema: string,
     usuario: string
-
+    nome: string
 
 }

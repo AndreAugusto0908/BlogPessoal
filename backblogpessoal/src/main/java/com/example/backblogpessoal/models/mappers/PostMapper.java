@@ -20,8 +20,9 @@ public class PostMapper {
                 post.getTitulo(),
                 post.getTexto(),
                 formatddmm(post.getData()),
-                post.getUsuario().getNome(),
-                post.getTema().getDescricao()
+                post.getUsuario().getUsuario(),
+                post.getTema().getDescricao(),
+                post.getUsuario().getNome()
         );
     }
 

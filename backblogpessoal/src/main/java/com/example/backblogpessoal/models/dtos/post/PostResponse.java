@@ -8,6 +8,7 @@ public record PostResponse(
         String texto,
         String data,
         String usuario,
-        String tema
+        String tema,
+        String nome
 ) {
 }

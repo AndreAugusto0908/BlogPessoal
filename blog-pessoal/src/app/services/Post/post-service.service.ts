@@ -46,4 +46,13 @@ export class PostService {
     return this.httpClient.get<PostResponse[]>(`${API_BASE_URL}/api/postagens/filtro`, 
       { headers, params })
   }
+
+  getAllPosts(){
+    const headers = {
+      Authorization: `Bearer ${this.token}`
+    };
+
+    return this.httpClient.get<PostResponse[]>(`${API_BASE_URL}/api/postagens`, 
+      { headers })
+  }
 }

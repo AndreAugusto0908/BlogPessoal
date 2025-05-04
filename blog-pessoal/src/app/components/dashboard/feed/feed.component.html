@@ -2,22 +2,38 @@
     <div>
         <span class="text-branco opacity-70 font-extralight text-4xl">Feed</span>
     </div>
-    <section class="bg-fundocinza rounded-2xl flex flex-row justify-center p-10">
-        <div class="bg-fundo bg-opacity-20 rounded-2xl p-4 justify-between">
-            <div class="flex flex-row justify-between gap-7">
-                <div>
-                    Icon
+
+    <section 
+    class="bg-fundocinza rounded-2xl flex flex-col p-6 gap-4 overflow-y-auto max-h-[650px]">
+        @for (post of allPosts.slice().reverse(); track post.id) {
+          <div class="bg-fundo opacity-80 rounded-2xl p-6 w-full max-w-4xl">
+            
+            <div class="flex flex-row justify-between gap-25 flex-wrap">
+              <div class="flex flex-row gap-2">
+                <div class="bg-amarelo rounded-2xl text-fundo p-4">
+                  <span>{{ post.nome[0].toUpperCase() + post.nome[1].toUpperCase() }}</span>
                 </div>
-                <div>
-                    Andre
+                <div class="flex flex-col">
+                  <span class="text-branco opacity-70">{{ post.nome }}</span>
+                  <span class="text-sm text-branco opacity-70">{{ post.usuario }}</span>
                 </div>
-                <div>
-                    Café da manha
-                </div>
-                <div>
-                    Dia-a-dia
-                </div>
+              </div>
+    
+              <div class="flex items-center text-center justify-center pb-3">
+                <span class="text-branco opacity-70 text-2xl font-normal">{{ post.titulo }}</span>
+              </div>
+    
+              <div class="flex items-center text-center justify-center pb-3">
+                <span class="text-branco opacity-70 font-normal">{{ post.tema }}</span>
+              </div>
             </div>
-        </div>
-    </section>
-</main>
+    
+            <div class="flex flex-wrap pt-8">
+              <span class="text-branco opacity-70 break-words">
+                {{ post.texto }}
+              </span>
+            </div>
+          </div>
+        }
+        </section>
+    </main>
