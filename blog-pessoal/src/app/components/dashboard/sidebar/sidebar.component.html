@@ -42,12 +42,12 @@
             h-25 sm:h-25 md:h-25 lg:h-25 xl:h-25
             scrollbar-thin scrollbar-thumb-gray-600 scrollbar-track-transparent">
             @for (post of userPosts; track post.id) {
-                <div class="bg-fundo rounded-2xl p-4 flex flex-row gap-2 opacity-70">
-                <div class="flex flex-col gap-2">
-                    <span class="text-right text-branco opacity-60">{{ post.data }}</span>
-                    <span class="text-branco opacity-60">{{ post.texto }}</span>
-                </div>
-                </div>
+                <div class="bg-fundo rounded-2xl p-4 flex flex-col gap-2 opacity-70">
+                    <div class="flex justify-end w-full">
+                      <span class="text-branco opacity-60">{{ post.data }}</span>
+                    </div>
+                    <span class="text-branco opacity-60 text-left">{{ post.texto }}</span>
+                  </div>
             }
             </div>
         </div>
