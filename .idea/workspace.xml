@@ -1,49 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4ce75aec-53c9-41c1-a29a-e0a25421cbcb" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/BackBlogPessoal/.gitattributes" beforeDir="false" afterPath="$PROJECT_DIR$/backblogpessoal/.gitattributes" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackBlogPessoal/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/backblogpessoal/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackBlogPessoal/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/backblogpessoal/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackBlogPessoal/.scannerwork/.sonar_lock" beforeDir="false" afterPath="$PROJECT_DIR$/backblogpessoal/.scannerwork/.sonar_lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackBlogPessoal/.scannerwork/report-task.txt" beforeDir="false" afterPath="$PROJECT_DIR$/backblogpessoal/.scannerwork/report-task.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackBlogPessoal/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/backblogpessoal/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackBlogPessoal/mvnw" beforeDir="false" afterPath="$PROJECT_DIR$/backblogpessoal/mvnw" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackBlogPessoal/mvnw.cmd" beforeDir="false" afterPath="$PROJECT_DIR$/backblogpessoal/mvnw.cmd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackBlogPessoal/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backblogpessoal/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackBlogPessoal/sonar-project.properties" beforeDir="false" afterPath="$PROJECT_DIR$/backblogpessoal/sonar-project.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackBlogPessoal/src/main/java/com/example/BackBlogPessoal/BackBlogPessoalApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/backblogpessoal/src/main/java/com/example/BackBlogPessoal/BackBlogPessoalApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackBlogPessoal/src/main/java/com/example/BackBlogPessoal/Controller/AutheticationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backblogpessoal/src/main/java/com/example/BackBlogPessoal/Controller/AutheticationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackBlogPessoal/src/main/java/com/example/BackBlogPessoal/Controller/PostController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backblogpessoal/src/main/java/com/example/BackBlogPessoal/Controller/PostController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackBlogPessoal/src/main/java/com/example/BackBlogPessoal/Controller/TemaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backblogpessoal/src/main/java/com/example/BackBlogPessoal/Controller/TemaController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackBlogPessoal/src/main/java/com/example/BackBlogPessoal/Controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backblogpessoal/src/main/java/com/example/BackBlogPessoal/Controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackBlogPessoal/src/main/java/com/example/BackBlogPessoal/Infra/Exception/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/backblogpessoal/src/main/java/com/example/BackBlogPessoal/Infra/Exception/GlobalExceptionHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackBlogPessoal/src/main/java/com/example/BackBlogPessoal/Infra/Security/SecurityConfigurations.java" beforeDir="false" afterPath="$PROJECT_DIR$/backblogpessoal/src/main/java/com/example/BackBlogPessoal/Infra/Security/SecurityConfigurations.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackBlogPessoal/src/main/java/com/example/BackBlogPessoal/Infra/Security/SecurityFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/backblogpessoal/src/main/java/com/example/BackBlogPessoal/Infra/Security/SecurityFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackBlogPessoal/src/main/java/com/example/BackBlogPessoal/Infra/Security/TokenService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backblogpessoal/src/main/java/com/example/BackBlogPessoal/Infra/Security/TokenService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackBlogPessoal/src/main/java/com/example/BackBlogPessoal/Models/DTOs/Auth/AuthenticationDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/backblogpessoal/src/main/java/com/example/BackBlogPessoal/Models/DTOs/Auth/AuthenticationDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackBlogPessoal/src/main/java/com/example/BackBlogPessoal/Models/DTOs/Auth/LoginResponseDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/backblogpessoal/src/main/java/com/example/BackBlogPessoal/Models/DTOs/Auth/LoginResponseDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackBlogPessoal/src/main/java/com/example/BackBlogPessoal/Models/DTOs/Auth/RegisterDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/backblogpessoal/src/main/java/com/example/BackBlogPessoal/Models/DTOs/Auth/RegisterDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackBlogPessoal/src/main/java/com/example/BackBlogPessoal/Models/DTOs/Post/CriarPostDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/backblogpessoal/src/main/java/com/example/BackBlogPessoal/Models/DTOs/Post/CriarPostDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackBlogPessoal/src/main/java/com/example/BackBlogPessoal/Models/DTOs/Post/CriarTemaDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/backblogpessoal/src/main/java/com/example/BackBlogPessoal/Models/DTOs/Post/CriarTemaDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackBlogPessoal/src/main/java/com/example/BackBlogPessoal/Models/DTOs/Post/EditarPostDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/backblogpessoal/src/main/java/com/example/BackBlogPessoal/Models/DTOs/Post/EditarPostDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackBlogPessoal/src/main/java/com/example/BackBlogPessoal/Models/DTOs/Post/PostResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/backblogpessoal/src/main/java/com/example/BackBlogPessoal/Models/DTOs/Post/PostResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackBlogPessoal/src/main/java/com/example/BackBlogPessoal/Models/DTOs/User/EditarUserDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/backblogpessoal/src/main/java/com/example/BackBlogPessoal/Models/DTOs/User/EditarUserDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackBlogPessoal/src/main/java/com/example/BackBlogPessoal/Models/Mappers/PostMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/backblogpessoal/src/main/java/com/example/BackBlogPessoal/Models/Mappers/PostMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackBlogPessoal/src/main/java/com/example/BackBlogPessoal/Models/Post/Post.java" beforeDir="false" afterPath="$PROJECT_DIR$/backblogpessoal/src/main/java/com/example/BackBlogPessoal/Models/Post/Post.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackBlogPessoal/src/main/java/com/example/BackBlogPessoal/Models/Post/Tema.java" beforeDir="false" afterPath="$PROJECT_DIR$/backblogpessoal/src/main/java/com/example/BackBlogPessoal/Models/Post/Tema.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackBlogPessoal/src/main/java/com/example/BackBlogPessoal/Models/User/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/backblogpessoal/src/main/java/com/example/BackBlogPessoal/Models/User/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackBlogPessoal/src/main/java/com/example/BackBlogPessoal/Repository/PostRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backblogpessoal/src/main/java/com/example/BackBlogPessoal/Repository/PostRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackBlogPessoal/src/main/java/com/example/BackBlogPessoal/Repository/TemaRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backblogpessoal/src/main/java/com/example/BackBlogPessoal/Repository/TemaRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackBlogPessoal/src/main/java/com/example/BackBlogPessoal/Repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backblogpessoal/src/main/java/com/example/BackBlogPessoal/Repository/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackBlogPessoal/src/main/java/com/example/BackBlogPessoal/Service/AuthorizationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backblogpessoal/src/main/java/com/example/BackBlogPessoal/Service/AuthorizationService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackBlogPessoal/src/main/java/com/example/BackBlogPessoal/Service/PostService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backblogpessoal/src/main/java/com/example/BackBlogPessoal/Service/PostService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackBlogPessoal/src/main/java/com/example/BackBlogPessoal/Service/TemaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backblogpessoal/src/main/java/com/example/BackBlogPessoal/Service/TemaService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackBlogPessoal/src/main/java/com/example/BackBlogPessoal/Service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backblogpessoal/src/main/java/com/example/BackBlogPessoal/Service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackBlogPessoal/src/main/java/com/example/BackBlogPessoal/Utils/PostValidation.java" beforeDir="false" afterPath="$PROJECT_DIR$/backblogpessoal/src/main/java/com/example/BackBlogPessoal/Utils/PostValidation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackBlogPessoal/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/backblogpessoal/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackBlogPessoal/src/test/java/com/example/BackBlogPessoal/BackBlogPessoalApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/backblogpessoal/src/test/java/com/example/BackBlogPessoal/BackBlogPessoalApplicationTests.java" afterDir="false" />
-    </list>
+    <list default="true" id="4ce75aec-53c9-41c1-a29a-e0a25421cbcb" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -60,17 +18,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/André/Desktop/BlogPessoal/backblogpessoal",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/André/Desktop/BlogPessoal/backblogpessoal&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -89,6 +47,7 @@
       <updated>1744050009935</updated>
       <workItem from="1744050010713" duration="27000" />
       <workItem from="1744050462551" duration="39000" />
+      <workItem from="1746120198811" duration="33000" />
     </task>
     <servers />
   </component>

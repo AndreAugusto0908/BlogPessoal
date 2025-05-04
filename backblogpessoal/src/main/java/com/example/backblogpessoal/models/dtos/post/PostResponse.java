@@ -6,7 +6,7 @@ public record PostResponse(
         Long id,
         String titulo,
         String texto,
-        Date data,
+        String data,
         String usuario,
         String tema
 ) {
