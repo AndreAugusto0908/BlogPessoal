@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { PrimaryInputComponent } from '../../primary-input/primary-input.component';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
@@ -26,6 +26,8 @@ export class NewPostComponent implements OnInit {
   postForm!: FormGroup<PostForm>
   temas: TemaResponse[] = []
 
+  @Output() closeForm = new EventEmitter<void>();
+
   constructor(
     private toastService : ToastrService,
     private postService : PostService,
@@ -44,7 +46,9 @@ export class NewPostComponent implements OnInit {
 
   submit(){
     this.postService.newPost(this.postForm.value.titulo, this.postForm.value.tema, this.postForm.value.texto).subscribe({
-      next: () => {this.toastService.success("Post Realizado")},
+      next: () => {this.toastService.success("Post Realizado")
+        this.closeForm.emit()
+      },
       error: () => this.toastService.error("Erro inesperado tente novamente mais tarde")
     })
   }

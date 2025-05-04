@@ -1,6 +1,8 @@
 <nav class="flex flex-row bg-fundocinza opacity-80 p-5 justify-between">
     @if (mostrarFormulario) {
-        <app-new-post />
+        <div class="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50">
+            <app-new-post (closeForm)="onFormularioClick()" />
+        </div>
       }
 
     <section class="flex flex-row pl-15 gap-4">

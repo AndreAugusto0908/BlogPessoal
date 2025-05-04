@@ -1,1 +1,48 @@
-<p>sidebar works!</p>
+<aside class="flex flex-col gap-4">
+    <section class="flex flex-col justify-center items-center gap-3">
+        <div class="bg-fundocinza p-15 rounded-full flex justify-between items-center">
+            <span class="text-4xl text-branco opacity-70">{{ smallName }}</span>
+        </div>
+        <div>
+            <span class="text-branco opacity-70 font-serif text-2xl">
+                {{name}}
+            </span>
+        </div>
+        <div>
+            <span class="text-branco opacity-40 text-sm">
+                {{username}} 
+            </span>
+        </div>
+    </section>
+    <section class="bg-fundocinza p-3 rounded-2xl flex flex-col gap-5 ">
+        <div class="flex flex-col justify-center gap-5 ">
+            <app-button-sidebar
+                nameButton="Home"
+            >
+                <img src="/Home.svg" alt="">
+            </app-button-sidebar>
+          
+            <app-button-sidebar
+                nameButton="Meu Perfil"
+            >
+                <img src="/meuPerfil.svg" alt="">
+            </app-button-sidebar>
+          
+            <app-button-sidebar
+                nameButton="Estatisticas"
+            >
+                <img src="/Estatistica.svg" alt="">
+            </app-button-sidebar>
+          
+          </div>
+        <div>
+            <span>Ultimos Post</span>
+            <div>
+                <div class="bg-fundo rounded-2xl p-4 flex flex-col gap-2">
+                    <span class="text-right">dd/mm</span>
+                    <span>Amei meu café da manhã</span>
+                </div>
+            </div>
+        </div>
+    </section>
+</aside>
