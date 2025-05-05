@@ -1,6 +1,29 @@
-version: '3'
-
+version: '3.8'
 services:
+  db:
+    image: postgres:15
+    container_name: postgres_container
+    environment:
+      POSTGRES_DB: blog
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  app:
+    build: .
+    container_name: spring_blog_app
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/blog
+      SPRING_DATASOURCE_USERNAME: user
+      SPRING_DATASOURCE_PASSWORD: password
+
   sonarqube:
     image: sonarqube:latest
     container_name: sonarqube
@@ -14,6 +37,7 @@ services:
       - sonarqube_extensions:/opt/sonarqube/extensions
 
 volumes:
+  pgdata:
   sonarqube_data:
   sonarqube_logs:
   sonarqube_extensions:
