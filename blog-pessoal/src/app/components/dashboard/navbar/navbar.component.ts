@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { NewPostComponent } from '../../forms/new-post/new-post.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -14,7 +15,23 @@ export class NavbarComponent {
 
     @Input() name : string = sessionStorage.getItem("nome") ?? ""
 
+    
+  constructor(private router: Router) {}
+
     onFormularioClick(){
       this.mostrarFormulario = !this.mostrarFormulario
+    }
+
+
+    irParaHome() {
+      this.router.navigate(['/auth/dashboard']);
+    }
+    
+    irParaPerfil() {
+      this.router.navigate(['/auth/dashboard/meuPerfil']);
+    }
+    
+    irParaEstatisticas() {
+      this.router.navigate(['/auth/dashboard/stats']);
     }
 }

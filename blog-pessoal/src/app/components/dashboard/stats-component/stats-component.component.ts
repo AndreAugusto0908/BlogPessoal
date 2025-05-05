@@ -1,0 +1,142 @@
+import { Component, OnInit } from '@angular/core';
+import { TemaService } from '../../../services/Tema/tema.service';
+import { PostService } from '../../../services/Post/post-service.service';
+import { PostResponse } from '../../../types/post-resonse.type';
+import { TemaResponse } from '../../../types/tema-response.type';
+import {
+  Chart,
+  BarController,
+  BarElement,
+  CategoryScale,
+  LinearScale,
+  Title,
+  Tooltip,
+  Legend
+} from 'chart.js';
+import { ChartService } from '../../../services/Chart/chart.service';
+
+Chart.register(
+  BarController,
+  BarElement,
+  CategoryScale,
+  LinearScale,
+  Title,
+  Tooltip,
+  Legend
+);
+
+@Component({
+  selector: 'app-stats-component',
+  imports: [],
+  templateUrl: './stats-component.component.html',
+  styleUrl: './stats-component.component.css'
+})
+export class StatsComponentComponent implements OnInit {
+  allPosts: PostResponse[] = [];
+  userPosts: PostResponse[] = [];
+  temas: TemaResponse[] = [];
+
+  totalPosts = 0;
+  totalTemas = 0;
+  temaMaisPosts = '';
+  temaMenosPosts = '';
+  totalPostsUsuario = 0;
+  temaMaisPostsUsuario = '';
+  temaMenosPostsUsuario = '';
+
+  constructor(
+    private postService: PostService,
+    private temaService: TemaService,
+    private chartService: ChartService
+  ) {}
+
+  ngOnInit(): void {
+    this.loadStats();
+  }
+
+  loadStats() {
+    this.postService.getAllPosts().subscribe(posts => {
+      this.allPosts = posts;
+      this.totalPosts = posts.length;
+      this.calcularTemasGlobais();
+    });
+
+    this.postService.getPostsByUser().subscribe(userPosts => {
+      this.userPosts = userPosts;
+      this.totalPostsUsuario = userPosts.length;
+      this.calcularTemasUsuario();
+    });
+
+    this.temaService.getAllTemas().subscribe(temas => {
+      this.temas = temas;
+      this.totalTemas = temas.length;
+    });
+  }
+
+  calcularTemasGlobais() {
+    const countMap = this.contarTemas(this.allPosts);
+    this.temaMaisPosts = this.obterMaior(countMap);
+    this.temaMenosPosts = this.obterMenor(countMap);
+  }
+
+  calcularTemasUsuario() {
+    const countMap = this.contarTemas(this.userPosts);
+    this.temaMaisPostsUsuario = this.obterMaior(countMap);
+    this.temaMenosPostsUsuario = this.obterMenor(countMap);
+  }
+
+  contarTemas(posts: PostResponse[]) {
+    const mapa = new Map<string, number>();
+    posts.forEach(post => {
+      const tema = post.tema;
+      mapa.set(tema, (mapa.get(tema) || 0) + 1);
+    });
+    return mapa;
+  }
+
+  obterMaior(mapa: Map<string, number>): string {
+    let max = -1;
+    let tema = '';
+    mapa.forEach((valor, chave) => {
+      if (valor > max) {
+        max = valor;
+        tema = chave;
+      }
+    });
+    return tema || 'Nenhum';
+  }
+
+  obterMenor(mapa: Map<string, number>): string {
+    let min = Infinity;
+    let tema = '';
+    mapa.forEach((valor, chave) => {
+      if (valor < min) {
+        min = valor;
+        tema = chave;
+      }
+    });
+    return tema || 'Nenhum';
+  }
+  
+  ngAfterViewInit() {
+    this.postService.getAllPosts().subscribe(posts => {
+      const mapa = this.contarTemas(posts);
+      this.chartService.createBarChart(
+        'chartGlobal',
+        Array.from(mapa.keys()),
+        Array.from(mapa.values()),
+        'Posts por Tema (Geral)'
+      );
+    });
+  
+    this.postService.getPostsByUser().subscribe(posts => {
+      const mapa = this.contarTemas(posts);
+      this.chartService.createBarChart(
+        'chartUser',
+        Array.from(mapa.keys()),
+        Array.from(mapa.values()),
+        'Posts por Tema (Usuário)'
+      );
+    });
+  }
+}

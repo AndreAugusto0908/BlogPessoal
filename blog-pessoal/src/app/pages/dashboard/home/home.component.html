@@ -1,16 +1,18 @@
 <main class="flex flex-col h-screen">
     <div>
-        <app-navbar></app-navbar>
+      <app-navbar></app-navbar>
     </div>
     <div class="flex flex-row justify-between p-20">
-        <div class="">
-            <app-sidebar></app-sidebar>
-        </div>
-        <div>
-            <app-feed></app-feed>
-        </div>
-        <div>
-            <app-new-post></app-new-post>
-        </div>
+      <div class="hidden lg:block">
+        <app-sidebar></app-sidebar>
+      </div>
+  
+      <div>
+        <app-feed></app-feed>
+      </div>
+  
+      <div class="hidden 2xl:block">
+        <app-new-post></app-new-post>
+      </div>
     </div>
-</main>
+  </main>

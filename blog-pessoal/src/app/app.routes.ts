@@ -4,6 +4,7 @@ import { SignupComponent } from './pages/signup/signup.component';
 import { HomeComponent } from './pages/dashboard/home/home.component';
 import { AuthGuard } from './guard/auth-guard.guard';
 import { MeuPerfilComponent } from './pages/dashboard/meu-perfil/meu-perfil.component';
+import { StatsComponent } from './pages/dashboard/stats/stats.component';
 
 export const routes: Routes = [
     {
@@ -22,6 +23,11 @@ export const routes: Routes = [
     {
         path: "auth/dashboard/meuPerfil",
         component: MeuPerfilComponent,
+        canActivate: [AuthGuard]
+    },
+    {
+        path: "auth/dashboard/stats",
+        component: StatsComponent,
         canActivate: [AuthGuard]
     }
 ];
