@@ -21,6 +21,8 @@ export class NavbarComponent {
    */
     mostrarFormulario = false
 
+    mostrarLogout: boolean = false;
+
     
   /**
    * Nome do usuário autenticado, recebido via sessionStorage ou como Input externo.
@@ -61,4 +63,20 @@ export class NavbarComponent {
     irParaEstatisticas() {
       this.router.navigate(['/auth/dashboard/stats']);
     }
+
+      /**
+   * Alterna a visibilidade do formulário de logout.
+   */
+    toggleLogoutMenu() {
+      this.mostrarLogout = !this.mostrarLogout;
+    }
+
+
+      /**
+   * Realiza limpeza da sessão e retorna usuario para pagina inicial
+   */
+logout() {
+  sessionStorage.clear();
+  this.router.navigate(['/']);
+}
 }

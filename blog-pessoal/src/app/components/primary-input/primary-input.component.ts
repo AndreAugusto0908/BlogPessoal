@@ -4,7 +4,7 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR, ReactiveFormsModule } from '@a
 /**
  * Tipos válidos para o input do componente.
  */
-type InputTypes = "text"  |  "senha"
+type InputTypes = "text"  |  "password"
 
 
 /**

@@ -25,10 +25,20 @@
     </button>
   </section>
 
-  <section class="hidden sm:flex pr-10">
-    <div class="bg-amarelo p-4 rounded-2xl flex items-center justify-center text-fundo border-amarelo">
+  <section class="hidden sm:flex pr-10 relative">
+    <div
+      class="bg-amarelo p-4 rounded-2xl flex items-center justify-center text-fundo border-amarelo hover:cursor-pointer"
+      (click)="toggleLogoutMenu()"
+    >
       <span>{{ name[0].toUpperCase() + name[1].toUpperCase() }}</span>
     </div>
+  
+    @if (mostrarLogout) {
+      <div class="absolute top-full mt-2 right-0 bg-fundocinza text-branco p-2 px-4 rounded-xl shadow-lg z-50 hover:cursor-pointer hover:bg-red-600 transition-all"
+           (click)="logout()">
+        Sair
+      </div>
+    }
   </section>
 </nav>
 

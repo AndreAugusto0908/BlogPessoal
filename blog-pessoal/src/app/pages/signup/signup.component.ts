@@ -47,7 +47,11 @@ export class SignupComponent {
       this.signupForm = new FormGroup({
         nome: new FormControl("", [Validators.required, Validators.min(3)]),
         usuario: new FormControl("", [Validators.required ,  Validators.min(3)]),
-        senha: new FormControl("", [Validators.required, Validators.min(5)])
+        senha: new FormControl("", [
+          Validators.required,
+          Validators.minLength(6),
+          Validators.pattern(/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$/)
+        ])
       })
     }
 
@@ -57,7 +61,8 @@ export class SignupComponent {
    */
     submit(){
       this.registerService.register(this.signupForm.value.nome ,this.signupForm.value.usuario, this.signupForm.value.senha).subscribe({
-        next: () => this.toastService.success("Registro Feito com Sucessor"),
+        next: () => {this.toastService.success("Registro Feito com Sucessor")
+        this.router.navigate(["/login"])},
         error: () => this.toastService.error("Erro inesperado tente novamente mais tarde")
       })
     }

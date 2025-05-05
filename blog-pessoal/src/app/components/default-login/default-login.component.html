@@ -6,7 +6,7 @@
 
         <div class="flex flex-row w-full gap-1 justify-center pb-7">
             <span>{{ subText }}</span>
-            <a (click)="navigate()" class="text-amarelo">{{ yellowSubText }}</a> 
+            <a (click)="navigate()" class="text-amarelo hover:cursor-pointer">{{ yellowSubText }}</a> 
         </div>
 
         <div class="pb-5">
@@ -15,7 +15,7 @@
 
         <div>
             <button
-                class="bg-amarelo w-full rounded-2xl border pt-2 pb-2 disabled:opacity-70"
+                class="bg-amarelo w-full rounded-2xl border pt-2 pb-2 disabled:opacity-70 hover:cursor-pointer"
                 (click)="sumbit()"
                 [disabled]="disableButton"
                 >{{ bttnText }}

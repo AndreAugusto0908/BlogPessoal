@@ -23,11 +23,25 @@
         </app-primary-input>
         <app-primary-input
             formControlName="senha"
-            type="senha"
+            type="password"
             placeholder="Senha"
         >
             <img src="/lock.svg" alt="Login">       
         </app-primary-input>
+
+        @if (signupForm.get('senha')?.touched && signupForm.get('senha')?.invalid) {
+            <div class="text-red-500 text-sm pl-2">
+              @if (signupForm.get('senha')?.errors?.['required']) {
+                <p>A senha é obrigatória.</p>
+              }
+              @if (signupForm.get('senha')?.errors?.['minlength']) {
+                <p>A senha deve ter no mínimo 6 caracteres.</p>
+              }
+              @if (signupForm.get('senha')?.errors?.['pattern']) {
+                <p>A senha deve conter letras e números.</p>
+              }
+            </div>
+          }
     </form>
 
 </app-default-login>

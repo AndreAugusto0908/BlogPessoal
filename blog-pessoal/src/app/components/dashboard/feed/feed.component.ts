@@ -35,6 +35,11 @@ export class FeedComponent implements OnInit {
    */
   temaSelecionado: string = '';
 
+    /**
+   * Data selecionada no filtro.
+   */
+  dataSelecionada: string = '';
+
   
   /**
    * Lista de postagens filtradas com base no tema selecionado.
@@ -94,6 +99,25 @@ export class FeedComponent implements OnInit {
       this.postsFiltrados = valorSelecionado
         ? this.allPosts.filter((post) => post.tema === valorSelecionado)
         : this.allPosts;
+    }
+
+    filtrarPostsPorData() {
+      if (!this.dataSelecionada) {
+        this.postsFiltrados = this.temaSelecionado
+          ? this.allPosts.filter(post => post.tema === this.temaSelecionado)
+          : this.allPosts;
+        return;
+      }
+    
+      // Converte o formato do input date (yyyy-mm-dd) para "dd/mm"
+      const partes = this.dataSelecionada.split('-');
+      const dataFormatada = `${partes[2]}/${partes[1]}`;
+    
+      this.postsFiltrados = this.allPosts.filter(post => {
+        const temaCond = this.temaSelecionado ? post.tema === this.temaSelecionado : true;
+        const dataCond = post.data === dataFormatada;
+        return temaCond && dataCond;
+      });
     }
 
 }
