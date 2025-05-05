@@ -3,6 +3,7 @@ import { ButtonSidebarComponent } from '../components/button-sidebar/button-side
 import { PostService } from '../../../services/Post/post-service.service';
 import { PostResponse } from '../../../types/post-resonse.type';
 import { ToastrService } from 'ngx-toastr';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sidebar',
@@ -22,7 +23,8 @@ export class SidebarComponent implements OnInit{
 
     constructor(
       private toastService : ToastrService,
-      private postService : PostService
+      private postService : PostService,
+      private router: Router
     ){}
 
     ngOnInit(): void {
@@ -34,6 +36,11 @@ export class SidebarComponent implements OnInit{
         next: (posts)  => {this.userPosts = posts},
         error: () => this.toastService.error("Erro inesperado ao carregar temas tente novamente mais tarde")
       })
+    }
+
+    mudarPagina(pagina : string){
+      console.log(pagina)
+      this.router.navigate(['auth/dashboard' + pagina ])
     }
 }
 

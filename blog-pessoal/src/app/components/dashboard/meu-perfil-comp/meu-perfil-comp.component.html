@@ -1,0 +1,69 @@
+<main class="flex flex-col gap-5"> 
+    <section class="flex flex-col justify-center items-center gap-3">
+        <div>
+            <span class="text-branco opacity-70 font-serif text-5xl">
+                {{name}}
+            </span>
+        </div>
+        <div>
+            <span class="text-branco opacity-40">
+                {{username}} 
+            </span>
+        </div>
+    </section>
+    <section>
+        <div class="flex justify-between p-2">
+            <span class="text-branco opacity-70 font-extralight text-4xl">Meus Posts</span>
+            <span class="text-branco opacity-40">
+              Numero de posts: {{numeroPosts()}}
+            </span>
+        </div>
+        <section 
+        class="bg-fundocinza rounded-2xl flex flex-col p-6 gap-4 overflow-y-auto max-h-[600px]">
+            @for (post of userPosts.slice().reverse(); track post.id) {
+              <div class="bg-fundo opacity-80 rounded-2xl p-6 w-full max-w-4xl">
+                
+                <div class="flex flex-row justify-between gap-25 flex-wrap">
+                  <div class="flex flex-row gap-2">
+                    <span class="text-branco opacity-80">{{ post.data }}</span>
+                  </div>
+        
+                  <div class="flex items-center text-center justify-center pb-3">
+                    <span class="text-branco opacity-70 text-2xl font-normal">{{ post.titulo }}</span>
+                  </div>
+        
+                  <div class="flex items-center text-center justify-center pb-3">
+                    <span class="text-branco opacity-70 font-normal">{{ post.tema }}</span>
+                  </div>
+
+                  <div class="flex flex-row gap-3">
+                    <button 
+                      (click)="onFormularioClick(post)"
+                      class="hover:cursor-pointer">
+                      <img src="/edit.svg" alt="editar">
+                    </button>
+                  
+                    <button 
+                      (click)="deletePost(post.id)"
+                      class="hover:cursor-pointer">
+                      <img src="/delete.svg" alt="deletar">
+                    </button>
+                  </div>
+                </div>
+        
+                <div class="flex flex-wrap pt-8">
+                  <span class="text-branco opacity-70 break-words">
+                    {{ post.texto }}
+                  </span>
+                </div>
+              </div>
+            }
+            </section>
+    </section>
+</main>
+
+@if (mostrarFormulario) {
+  <div class="fixed inset-0 z-[9999] bg-black bg-opacity-60 backdrop-blur-sm flex items-center justify-center">
+    <app-edit-post [post]="postSelecionado" (closeForm)="mostrarFormulario = false"></app-edit-post>
+  </div>
+}

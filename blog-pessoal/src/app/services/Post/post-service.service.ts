@@ -17,42 +17,47 @@ export class PostService {
     this.token = sessionStorage.getItem("auth-token")
     this.autor = sessionStorage.getItem("id")
   }
-
-  newPost(titulo: string, tema: string, texto: string){
-    console.log(titulo, tema, texto, this.usuario)
-
-    const headers = {
+  private getAuthHeaders() {
+    return {
       Authorization: `Bearer ${this.token}`
     };
+  }
 
+
+  newPost(titulo: string, tema: string, texto: string){
     return this.httpClient.post<PostResponse>(`${API_BASE_URL}/api/postagens`,{
       titulo,
       tema,
       texto,
       usuario: this.usuario
-    },{ headers }
+    },{ headers: this.getAuthHeaders() }
     )
   }
 
   getPostsByUser(){
-    const headers = {
-      Authorization: `Bearer ${this.token}`
-    };
-
     const params = {
       autor: this.autor ?? ""
     }
-    
     return this.httpClient.get<PostResponse[]>(`${API_BASE_URL}/api/postagens/filtro`, 
-      { headers, params })
+      { headers: this.getAuthHeaders(), params })
   }
 
   getAllPosts(){
-    const headers = {
-      Authorization: `Bearer ${this.token}`
-    };
-
     return this.httpClient.get<PostResponse[]>(`${API_BASE_URL}/api/postagens`, 
-      { headers })
+      { headers: this.getAuthHeaders() })
+  }
+
+  delete(id : number){
+    return this.httpClient.delete(`${API_BASE_URL}/api/postagens/${id}`,
+      { headers: this.getAuthHeaders() })
+  }
+
+  editar(id: number, titulo: string, tema: string, texto: string) {
+    return this.httpClient.put(`${API_BASE_URL}/api/postagens/${id}`, {
+      titulo,
+      tema,
+      texto
+    },{ headers: this.getAuthHeaders() }
+    )
   }
 }

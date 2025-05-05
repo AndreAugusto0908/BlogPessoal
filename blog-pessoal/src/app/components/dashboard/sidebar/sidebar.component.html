@@ -1,55 +1,60 @@
-<aside class="flex flex-col gap-4 ">
-    <section class="flex flex-col justify-center items-center gap-3">
-        <div class="bg-fundocinza p-15 rounded-full flex justify-between items-center">
-            <span class="text-4xl text-branco opacity-70">{{ name[0].toUpperCase() + name[1].toUpperCase() }}</span>
-        </div>
-        <div>
-            <span class="text-branco opacity-70 font-serif text-2xl">
-                {{name}}
-            </span>
-        </div>
-        <div>
-            <span class="text-branco opacity-40 text-sm">
-                {{username}} 
-            </span>
-        </div>
-    </section>
-    <section class="bg-fundocinza p-3 rounded-2xl flex flex-col gap-5 ">
-        <div class="flex flex-col justify-center gap-5 ">
-            <app-button-sidebar
-                nameButton="Home"
-            >
-                <img src="/Home.svg" alt="">
-            </app-button-sidebar>
-          
-            <app-button-sidebar
-                nameButton="Meu Perfil"
-            >
-                <img src="/meuPerfil.svg" alt="">
-            </app-button-sidebar>
-          
-            <app-button-sidebar
-                nameButton="Estatisticas"
-            >
-                <img src="/Estatistica.svg" alt="">
-            </app-button-sidebar>
-          
-          </div>
+<aside class="flex flex-col gap-4">
+  <section class="flex flex-col justify-center items-center gap-3">
+    <div
+      class="bg-fundocinza p-15 rounded-full flex justify-between items-center"
+    >
+      <span class="text-4xl text-branco opacity-70">{{
+        name[0].toUpperCase() + name[1].toUpperCase()
+      }}</span>
+    </div>
+    <div>
+      <span class="text-branco opacity-70 font-serif text-2xl">
+        {{ name }}
+      </span>
+    </div>
+    <div>
+      <span class="text-branco opacity-40 text-sm">
+        {{ username }}
+      </span>
+    </div>
+  </section>
+  <section class="bg-fundocinza p-3 rounded-2xl flex flex-col gap-5">
+    <div class="flex flex-col justify-center gap-5">
+      <app-button-sidebar nameButton="Home" route="" (submit)="mudarPagina('')">
+        <img src="/Home.svg" alt="" />
+      </app-button-sidebar>
 
-        <div class="border-t-2 border-branco pt-4">
-            <span class="text-branco opacity-60">Ultimos Post</span>
-            <div class="flex flex-col gap-3 overflow-y-auto pr-1
-            h-25 sm:h-25 md:h-25 lg:h-25 xl:h-25
-            scrollbar-thin scrollbar-thumb-gray-600 scrollbar-track-transparent">
-            @for (post of userPosts; track post.id) {
-                <div class="bg-fundo rounded-2xl p-4 flex flex-col gap-2 opacity-70">
-                    <div class="flex justify-end w-full">
-                      <span class="text-branco opacity-60">{{ post.data }}</span>
-                    </div>
-                    <span class="text-branco opacity-60 text-left">{{ post.texto }}</span>
-                  </div>
-            }
-            </div>
+      <app-button-sidebar
+        nameButton="Meu Perfil"
+        route="/meuPerfil"
+        (submit)="mudarPagina('/meuPerfil')"
+      >
+        <img src="/meuPerfil.svg" alt="" />
+      </app-button-sidebar>
+
+      <app-button-sidebar
+        nameButton="Estatísticas"
+        route="/stats"
+        (submit)="mudarPagina('/stats')"
+      >
+        <img src="/Estatistica.svg" alt="" />
+      </app-button-sidebar>
+    </div>
+
+    <div class="border-t-2 border-branco pt-4">
+      <span class="text-branco opacity-60">Ultimos Post</span>
+      <div
+        class="flex flex-col gap-3 overflow-y-auto pr-1 h-25 sm:h-25 md:h-25 lg:h-25 xl:h-25 scrollbar-thin scrollbar-thumb-gray-600 scrollbar-track-transparent"
+      >
+        @for (post of userPosts; track post.id) {
+        <div class="bg-fundo rounded-2xl p-4 flex flex-col gap-2 opacity-70">
+          <div class="flex justify-end w-full">
+            <span class="text-branco opacity-60">{{ post.data }}</span>
+          </div>
+          <span class="text-branco opacity-60 text-left">{{ post.texto }}</span>
         </div>
-    </section>
+        }
+      </div>
+    </div>
+  </section>
 </aside>

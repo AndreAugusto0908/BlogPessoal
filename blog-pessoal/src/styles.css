@@ -13,6 +13,10 @@
   --color-branco: #d9e4ed;
 }
 
+[data-active="true"] {
+  @apply bg-amarelo rounded-2xl;
+}
+
 body {
     @apply font-sans bg-fundo;
   }
