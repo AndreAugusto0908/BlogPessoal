@@ -7,12 +7,19 @@ import { LoginService } from '../../services/Auth/login.service';
 import { ToastrService } from 'ngx-toastr';
 import { RegisterService } from '../../services/Auth/register.service';
 
+/**
+ * Interface representando os controles do formulário de cadastro.
+ */
 interface SignupForm{
   nome: FormControl,
   usuario: FormControl,
   senha: FormControl
 }
 
+/**
+ * Componente responsável pela tela de cadastro da aplicação.
+ * Utiliza componentes reutilizáveis e formulário reativo para validação e envio.
+ */
 @Component({
   selector: 'app-signup',
   imports: [
@@ -27,7 +34,9 @@ interface SignupForm{
   styleUrl: './signup.component.css'
 })
 export class SignupComponent {
-
+    /**
+   * Formulário reativo contendo os campos de cadastro: nome, usuário e senha.
+   */
     signupForm!: FormGroup<SignupForm>
 
     constructor(
@@ -42,6 +51,10 @@ export class SignupComponent {
       })
     }
 
+      /**
+   * Envia os dados do formulário para o serviço de cadastro.
+   * Exibe mensagem de sucesso ou erro de acordo com a resposta da API.
+   */
     submit(){
       this.registerService.register(this.signupForm.value.nome ,this.signupForm.value.usuario, this.signupForm.value.senha).subscribe({
         next: () => this.toastService.success("Registro Feito com Sucessor"),
@@ -49,6 +62,10 @@ export class SignupComponent {
       })
     }
 
+    
+  /**
+   * Redireciona o usuário para a tela de login.
+   */
     navigate(){
       this.router.navigate(["login"])
     }

@@ -6,6 +6,10 @@ import { TemaService } from '../../../services/Tema/tema.service';
 import { TemaResponse } from '../../../types/tema-response.type';
 import { FormsModule } from '@angular/forms';
 
+/**
+ * Componente responsável por exibir o feed de postagens.
+ * Permite filtrar os posts por tema e exibe todos os posts recuperados da API.
+ */
 @Component({
   selector: 'app-feed',
   imports: [
@@ -16,10 +20,25 @@ import { FormsModule } from '@angular/forms';
 })
 export class FeedComponent implements OnInit {
 
+    /**
+   * Lista completa de postagens carregadas da API.
+   */
   allPosts: PostResponse[] = []
+
+    /**
+   * Lista completa de temas disponíveis para filtro.
+   */
   allTemas: TemaResponse[] = []
 
+    /**
+   * Tema selecionado no filtro.
+   */
   temaSelecionado: string = '';
+
+  
+  /**
+   * Lista de postagens filtradas com base no tema selecionado.
+   */
   postsFiltrados: PostResponse[] = [];
 
     constructor(
@@ -28,11 +47,19 @@ export class FeedComponent implements OnInit {
       private toastService : ToastrService
     ){}
 
+    
+  /**
+   * Inicializa o componente carregando todos os posts e temas disponíveis.
+   */
     ngOnInit(): void {
       this.getAllPost();
       this.getAllTemas();
     }
 
+    
+  /**
+   * Requisita todas as postagens da API e aplica o filtro de tema, se houver.
+   */
     getAllPost() {
       this.postService.getAllPosts().subscribe({
         next: (posts) => {
@@ -46,6 +73,10 @@ export class FeedComponent implements OnInit {
       });
     }
 
+    
+  /**
+   * Requisita todos os temas disponíveis da API.
+   */
     getAllTemas(){
       this.temaService.getAllTemas().subscribe({
         next: (temas) => {this.allTemas = temas},
@@ -53,6 +84,11 @@ export class FeedComponent implements OnInit {
       })
     }
 
+      /**
+   * Filtra os posts com base no tema selecionado.
+   * 
+   * @param valorSelecionado - O nome do tema selecionado ou string vazia para mostrar todos.
+   */
     filtrarPosts(valorSelecionado: string) {
       this.temaSelecionado = valorSelecionado;
       this.postsFiltrados = valorSelecionado

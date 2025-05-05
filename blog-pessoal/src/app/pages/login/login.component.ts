@@ -6,11 +6,19 @@ import { Router } from '@angular/router';
 import { LoginService } from '../../services/Auth/login.service';
 import { ToastrService } from 'ngx-toastr';
 
+
+/**
+ * Interface representando os controles do formulário de login.
+ */
 interface LoginForm{
   usuario : FormControl,
   senha : FormControl
 }
 
+/**
+ * Componente responsável pela tela de login da aplicação.
+ * Utiliza componentes reutilizáveis e formulário reativo para validação e envio.
+ */
 @Component({
   selector: 'app-signup',
   imports: [
@@ -25,7 +33,9 @@ interface LoginForm{
   styleUrl: './login.component.css'
 })
 export class LoginComponent {
-
+    /**
+   * Formulário reativo contendo os campos de login: usuário e senha.
+   */
     loginform!: FormGroup<LoginForm>
 
     constructor(
@@ -39,6 +49,10 @@ export class LoginComponent {
       })
     }
 
+      /**
+   * Envia os dados do formulário para o serviço de login.
+   * Redireciona para o dashboard em caso de sucesso, exibe erro caso falhe.
+   */
     submit(){
       this.loginService.login(this.loginform.value.usuario, this.loginform.value.senha).subscribe({
         next: () => {this.toastService.success("Login Feito com Sucessor")
@@ -48,6 +62,9 @@ export class LoginComponent {
       })
     }
 
+      /**
+   * Redireciona o usuário para a tela de cadastro.
+   */
     navigate(){
       this.router.navigate(["signup"])
     }
