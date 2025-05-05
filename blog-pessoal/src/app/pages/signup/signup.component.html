@@ -1,0 +1,33 @@
+<app-default-login
+    subText="Já possui conta?"
+    yellowSubText="Faça o login"
+    bttnText="Cadastre-se"
+    (submit)="submit()"
+    (navigate)="navigate()"
+    [disableButton]="!signupForm.valid"
+>
+    <form [formGroup]="signupForm" class="flex flex-col gap-5">
+        <app-primary-input
+            formControlName="nome"
+            type="text"
+            placeholder="Nome"
+        >
+            <img src="/nome.svg" alt="Nome">       
+        </app-primary-input>
+        <app-primary-input
+            formControlName="usuario"
+            type="text"
+            placeholder="Usuario"
+        >
+            <img src="/user.svg" alt="Login">       
+        </app-primary-input>
+        <app-primary-input
+            formControlName="senha"
+            type="senha"
+            placeholder="Senha"
+        >
+            <img src="/lock.svg" alt="Login">       
+        </app-primary-input>
+    </form>
+
+</app-default-login>

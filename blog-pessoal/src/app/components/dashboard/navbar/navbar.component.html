@@ -1,0 +1,41 @@
+<nav class="flex flex-wrap sm:flex-row flex-col bg-fundocinza opacity-80 p-5 justify-between gap-4 items-center">
+  
+  <section class="flex flex-row gap-4 items-center">
+    <button
+      (click)="onFormularioClick()"
+      class="bg-amarelo p-2 pt-3 pr-3 pl-3 flex items-center justify-center rounded-2xl">
+      <img src="/create.svg" alt="Novo Post">
+    </button>
+
+    <div class="hidden md:flex bg-fundocinza opacity-100 items-center gap-2 px-3 py-2">
+      <img src="/search.svg" alt="Buscar" />
+      <input type="text" placeholder="Pesquisar" class="text-branco w-full" />
+    </div>
+  </section>
+
+  <section class="flex flex-row gap-6">
+    <button (click)="irParaHome()">
+      <span class="text-fundo hover:cursor-pointer hover:text-branco">Home</span>
+    </button>
+    <button (click)="irParaPerfil()">
+      <span class="text-fundo hover:cursor-pointer hover:text-branco">Meu Perfil</span>
+    </button>
+    <button (click)="irParaEstatisticas()">
+      <span class="text-fundo hover:cursor-pointer hover:text-branco">Estatísticas</span>
+    </button>
+  </section>
+
+  <section class="hidden sm:flex pr-10">
+    <div class="bg-amarelo p-4 rounded-2xl flex items-center justify-center text-fundo border-amarelo">
+      <span>{{ name[0].toUpperCase() + name[1].toUpperCase() }}</span>
+    </div>
+  </section>
+</nav>
+
+  
+  @if (mostrarFormulario) {
+    <div class="fixed inset-0 z-[9999] bg-black bg-opacity-60 backdrop-blur-sm flex items-center justify-center">
+      <app-new-post (closeForm)="onFormularioClick()" />
+    </div>
+  }
+  

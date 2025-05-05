@@ -1,0 +1,13 @@
+
+<div class="relative w-full">
+    <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+        <ng-content></ng-content>
+    </div>
+    <input 
+        [type]="type" 
+        [placeholder]="placeholder"
+        [value]="value"
+        (input)="onInput($event)"
+        class="bg-fundo px-3 py-3 w-full rounded-2xl text-branco pl-12"
+    >
+</div>

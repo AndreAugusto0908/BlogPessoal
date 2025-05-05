@@ -1,0 +1,11 @@
+<div
+  (click)="sumbit()"
+  [attr.data-active]="isActiveRoute()"
+  class="flex items-center gap-6 p-4 transition-all duration-300 cursor-pointer rounded-2xl 
+         hover:bg-amarelo"
+>
+  <ng-content></ng-content>
+  <button class="text-white font-medium cursor-pointer">
+    {{ nameButton }}
+  </button>
+</div>

@@ -1,0 +1,58 @@
+<div class="bg-fundocinza rounded-2xl flex flex-col items-center justify-center p-4">
+
+    <div class="flex flex-row pb-6 pt-4 border-fundo border-b-2 mb-5 w-full justify-center gap-2">
+        <img src="postIcon.svg" alt="Post">
+        <span class="text-fundo text-lg font-bold tracking-wide">
+            Post
+          </span>
+    </div>
+    <div>
+        <form [formGroup]="postForm" class="flex flex-col gap-5">
+            <app-primary-input
+                formControlName="titulo"
+                type="text"
+                placeholder="Titulo"
+            >
+                <img src="/title.svg" alt="">
+            </app-primary-input>
+
+            <div class="relative w-full" >
+                <img 
+                    src="/search.svg" 
+                    alt="Buscar" 
+                    class="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 opacity-60 pointer-events-none"
+                />
+            
+                <select
+                    id="underline_select"
+                    formControlName="tema"
+                    class="bg-fundo px-3 py-3 w-full rounded-2xl text-branco pl-12"
+                    >
+                    <option value="" disabled selected>Escolha um tema</option>
+                    @for (tema of temas; track tema.id) {
+                        <option [value]="tema.descricao">
+                        {{ tema.descricao }}
+                        </option>
+                    }
+                </select>
+            </div>
+
+            <app-primary-input
+                formControlName="texto"
+                type="text"
+                placeholder="Texto"
+            >
+                <img src="/mensagem.svg" alt="">
+            </app-primary-input>
+        </form>
+    </div>
+    
+    <div class="w-full pt-7">
+        <button class="bg-amarelo rounded-2xl border p-3 disabled:opacity-70 w-full"
+            (click)="submit()"
+        >
+            Enviar
+        </button>
+    </div>
+
+</div>

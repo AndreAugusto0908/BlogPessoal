@@ -1,0 +1,55 @@
+<main>
+
+  <div class="flex flex-row justify-between items-center">
+    <span class="text-branco opacity-70 font-extralight text-4xl">Feed</span>
+  
+    <select
+      [(ngModel)]="temaSelecionado"
+      (ngModelChange)="filtrarPosts($event)"
+      class="bg-fundo text-branco p-2 rounded-2xl"
+    >
+      <option value="">Todos os temas</option>
+      @for (tema of allTemas; track tema.id) {
+        <option [value]="tema.descricao">{{ tema.descricao }}</option>
+      }
+    </select>
+  </div>
+
+  <section class="bg-fundocinza rounded-2xl flex flex-col p-6 gap-4 overflow-y-auto max-h-[650px] items-center">
+    @for (post of postsFiltrados.slice().reverse(); track post.id) {
+      <div class="bg-fundo opacity-80 rounded-2xl p-4 sm:p-6 w-full max-w-4xl">
+
+        <div class="flex flex-col sm:flex-row sm:justify-between sm:gap-25 gap-3">
+      
+          <div class="flex flex-row gap-2 items-center">
+            <div class="bg-amarelo rounded-2xl text-fundo p-3 sm:p-4 text-sm sm:text-base">
+              <span>{{ post.nome[0].toUpperCase() + post.nome[1].toUpperCase() }}</span>
+            </div>
+            <div class="flex flex-col">
+              <span class="text-branco opacity-70 text-sm sm:text-base">{{ post.nome }}</span>
+              <span class="text-xs text-branco opacity-60">{{ post.usuario }}</span>
+            </div>
+          </div>
+      
+          <div class="text-left sm:text-center">
+            <span class="text-branco opacity-70 text-lg sm:text-2xl font-normal">
+              {{ post.titulo }}
+            </span>
+          </div>
+      
+          <div class="text-left sm:text-center">
+            <span class="text-branco opacity-60 text-sm sm:text-base font-normal">
+              {{ post.tema }}
+            </span>
+          </div>
+        </div>
+      
+        <div class="pt-4 sm:pt-8">
+          <span class="text-branco opacity-70 text-sm sm:text-base break-words">
+            {{ post.texto }}
+          </span>
+        </div>
+      </div>
+    }
+  </section>
+</main>

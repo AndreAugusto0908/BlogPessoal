@@ -7,6 +7,8 @@ import org.springframework.stereotype.Component;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import static com.example.backblogpessoal.utils.DataFormatter.formatddmm;
+
 @Component
 public class PostMapper {
 
@@ -17,9 +19,10 @@ public class PostMapper {
                 post.getId(),
                 post.getTitulo(),
                 post.getTexto(),
-                post.getData(),
-                post.getUsuario().getNome(),
-                post.getTema().getDescricao()
+                formatddmm(post.getData()),
+                post.getUsuario().getUsuario(),
+                post.getTema().getDescricao(),
+                post.getUsuario().getNome()
         );
     }
 
