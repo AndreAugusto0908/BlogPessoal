@@ -54,7 +54,7 @@ class PostControllerTest {
     private static final String USUARIO = "joao";
     private static final String TEMA = "Tecnologia";
 
-    private final PostResponse postResponse = new PostResponse(ID, TITULO, TEXTO, new Date(), USUARIO, TEMA);
+    private final PostResponse postResponse = new PostResponse(ID, TITULO, TEXTO, "12/04", USUARIO, TEMA, "Andre");
 
     @Test
     @WithMockUser
